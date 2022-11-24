@@ -12,6 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/login.css">
     <title>Login &bull; Healthcare</title>
+    <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -22,7 +23,7 @@
             <div class="logo">
                 <img src="../assets/logo.png" alt="">
             </div>
-            <div class="brand">healthcare</div>
+            <div class="brand">Healthcare</div>
         </div>
         <!--welcome-->
         <div class="msg">
