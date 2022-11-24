@@ -1,0 +1,46 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.wrapper_all{
+    background-color: aquamarine;
+}
+.wrapper{
+    display: flex;
+    background-color: red;
+    height: 100vh;
+}
+/* ########## sidebar ################ */
+.sidebar{
+    background-color: rebeccapurple;
+    width: 230px;
+}
+.profile{
+    background-color: yellowgreen;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 10px;
+}
+.profile_imgname{
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+}
+.profile_imgname .profile_img{
+    background-image: url("../assets/profile.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+/* ########## body ################ */
+.dashboard_body{
+    background-color: blue;
+    width: calc(100% - 230px);
+}
