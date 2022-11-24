@@ -25,7 +25,7 @@ class Patient {
     }
 
     static public function addPatient($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes) {
-        Patient::db()->exec("INSERT INTO patient(cin, nomComplet, dateNaissance, sexe, profession, tel, adresse, numSecSociale,payeurs,mutuelle, dAlertes)VALUES($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes)");
+        Patient::db()->exec("INSERT INTO patient(cin, nomComplet, dateNaissance, sexe, profession, tel, adresse, numSecSociale, payeurs, mutuelle, dAlertes) VALUES($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes)");
     }
 
     static public function editPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){

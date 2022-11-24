@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-<<<<<<< HEAD
-    session_start();
-    if (!$_SESSION['currentUser']) {
-        header("Location:./login.php?login");
-    }
-=======
 session_start();
 include("../../backend/admin.php");
 include("../../backend/patient.php");
@@ -17,7 +11,6 @@ if (isset($_POST['logout'])) {
     Admin::logout();
     header("Location: ./login.php");
 }
->>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
 ?>
 
 <head>
@@ -37,11 +30,7 @@ if (isset($_POST['logout'])) {
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-<<<<<<< HEAD
                         <p><?php echo $_SESSION['currentUser']['email']?></p>
-=======
-                        <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
->>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
                     </div>
                     <div class="logout">
                         <form method="post">

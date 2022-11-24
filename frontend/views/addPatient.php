@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<?php
+session_start();
+include("../../backend/admin.php");
+include("../../backend/patient.php");
+if (!$_SESSION['currentUser']) {
+    header("Location:./login.php?login");
+}
+if (isset($_POST['logout'])) {
+    Admin::logout();
+    header("Location: ./login.php");
+}
+if (isset($_POST['addp'])) {
+    Patient::addPatient($_POST['cin'], $_POST['nom'], $_POST['daten'], $_POST['sexe'], $_POST['profession'], $_POST['tel'], $_POST['adresse'], $_POST['secsoc'],$_POST['payeurs'],  $_POST['mutuelle'], $_POST['alertes']);
+}
+?>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +27,7 @@
 
 <body>
     <div class="wrapper_all">
-        <class class="wrapper">
+        <div class="wrapper">
             <div class="sidebar">
                 <div class="profile">
                     <div class="profile_imgname">
@@ -28,8 +42,12 @@
                     <p class="menu_title">Dashboard</p>
                     <div class="menu_elm">
                         <ul>
-                            <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
-                            <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                            <a href="./dashboard.php">
+                                <li><i class="fa-regular fa-folder"></i>Dossier</li>
+                            </a>
+                            <a href="./archive.php">
+                                <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +61,7 @@
                     </div>
                 </div>
 
-                <div class="forms">
+                <form class="forms" method="post">
 
                     <!--identification-->
                     <div class="form_container">
@@ -52,71 +70,67 @@
                             <div class="row">
                                 <div class="item">
                                     <label for="">nom complet</label> <br>
-                                    <input type="text">
+                                    <input type="text" name="nom">
                                 </div>
                                 <div class="item">
 
-                                    <label for="">sex</label> <br>
-                                    <select name="sex" id="">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
+                                    <label for="">sexe</label> <br>
+                                    <select name="sexe" id="">
+                                        <option value="H">H</option>
+                                        <option value="F">F</option>
                                     </select>
                                 </div>
 
-                                <div class="item">
-                                    <label for="">numero de dossier</label> <br>
-                                    <input type="number">
-                                </div>
                             </div>
 
                             <div class="row">
                                 <div class="item">
                                     <label for="">CIN</label> <br>
-                                    <input type="number">
+                                    <input type="number" name="cin">
                                 </div>
                                 <div class="item">
                                     <label for="">date de naissance</label> <br>
-                                    <input type="date">
+                                    <input type="date" name="daten">
                                 </div>
                             </div>
 
                         </div>
                     </div>
                     <!--informations administratives-->
-                    <form class="form_container">
+                    <div class="form_container">
                         <div class="form_title">informations : </div>
                         <div class="form">
                             <div class="row">
                                 <div class="item">
-                                    <label for="">adress</label> <br>
-                                    <input type="text">
+                                    <label for="">adresse</label> <br>
+                                    <input type="text" name="adresse">
                                 </div>
                                 <div class="item">
 
                                     <label for="">téléphone</label> <br>
-                                    <input type="text">
+                                    <input type="text" name="tel">
                                 </div>
 
                                 <div class="item">
-                                    <label for="">tuteur</label> <br>
-                                    <input type="num">
+                                    <label for="">payeurs</label> <br>
+                                    <input type="num" name="payeurs">
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="item">
                                     <label for="">proffesion</label> <br>
-                                    <input type="text">
+                                    <input type="text" name="profession">
                                 </div>
                                 <div class="item">
                                     <label for="">numéro de sécurité sociale</label> <br>
-                                    <input type="text">
+                                    <input type="text" name="secsoc">
                                 </div>
                                 <div class="item">
                                     <label for="">mutuelle</label> <br>
                                     <select name="mutuelle" id="">
                                         <option value="mutuelle" selected>
-                                            mutuelle
+                                            Choisisr votre mutuelle
                                         </option>
                                         <option value="ATLANTIC">ATLANTIC</option>
                                         <option value="SMONO">SMONO</option>
@@ -128,53 +142,19 @@
                             <div class="row">
                                 <div class="item">
                                     <label for="">données d'alertes</label> <br>
-                                    <input type="text">
+                                    <input type="text" name="alertes">
                                 </div>
                             </div>
-
                         </div>
-                    </form>
-                    <!--traitments-->
-                    <div class="form_container">
-                        <div class="form_title">traitements : </div>
-                        <div class="form">
-                            <div class="row">
-                                <div class="item">
-                                    <label for="">nom de médecin</label> <br>
-                                    <input type="text">
-                                </div>
-                                <div class="item">
-
-                                    <label for="">date de la rencotre</label> <br>
-                                    <input type="date">
-                                </div>
-
-                                <div class="item">
-                                    <label for="">donées significatives de la rencotre</label> <br>
-                                    <input type="text">
-                                </div>
-                            </div>
-
-                            <div class="row">
-                                <div class="item">
-                                    <label for="">synthése de la rencotre</label> <br>
-                                    <input type="text">
-                                </div>
-                                <div class="item">
-                                    <label for="">décisions</label> <br>
-                                    <input type="text">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--end of forms-->
-                </div>
-
-                <!--submit button-->
-                <div class="btn"><button class="btn_update"> modifier </button></div>
+                    </d>
+                    <div class="btn"><button class="btn_update" type="submit" name="addp"> Ajouter </button></div>
+                </form>
+                <!--end of forms-->
             </div>
-        </class>
+
+            <!--submit button-->
+    </div>
+</div>
     </div>
 </body>
 
