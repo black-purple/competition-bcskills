@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 *{
     padding: 0;
+    text-decoration: none;
+
     margin: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
@@ -11,6 +13,9 @@
 .wrapper{
     display: flex;
     height: 100vh;
+}
+a {
+    color: #0f172a;
 }
 /* ########## sidebar ################ */
 .sidebar{
