@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 .wrapper_all{
     background-color: aquamarine;
@@ -41,6 +43,46 @@
 }
 /* ########## body ################ */
 .dashboard_body{
-    background-color: blue;
+    background-color: #fff;
     width: calc(100% - 230px);
 }
+
+.body_nav{
+    margin: 2rem 3rem;
+}
+.body_nav .title{
+    font-size: 1.4rem;
+    color:  #0f172a;
+    letter-spacing: 2px;
+}
+.body_nav .title span{
+    opacity: 0.8;
+}
+
+
+  
+  thead th,
+ 
+  
+  th {
+    letter-spacing: 2px;
+    padding: 20px;
+    
+  }
+  
+  td {
+    letter-spacing: 1px;
+  }
+  
+  tbody td {
+    text-align: center;
+  }
+  table td{
+    border-bottom: 1px solid black;
+
+  }
+  tr.border-bottom {
+    border-bottom: 1px solid #ff000d;
+  }
+  
+  

@@ -19,7 +19,7 @@ body{
    justify-content: center;
 }
 .login_container .logo{
-    background-image: url('../assets/logo.png');
+    /* background-image: url('../assets/logo.png'); */
     background-size: cover;
     background-position: center;
 }
