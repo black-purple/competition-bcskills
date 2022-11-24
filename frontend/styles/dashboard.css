@@ -63,6 +63,8 @@
 }
 .active{
     background-color: rgba(180, 172, 172, 0.503);
+    border-radius: 0 5px 5px 0px;
+    border-left: 4px solid rgb(38, 37, 37);
 }
 .menu_elm li i{
     padding: 0 10px;

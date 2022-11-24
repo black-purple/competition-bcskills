@@ -44,7 +44,7 @@
                 <div class="dashboard_body_nav">
                     <div class="body_nav">
                         <div class="icons"></div>
-                        <div class="title"> <span>Dashbords / </span> Default </div>
+                        <div class="title"> <span>Dashbords / </span> Dossier </div>
                     </div>
                 </div>
                 <div class="body_wrapper">
