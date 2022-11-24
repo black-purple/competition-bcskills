@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-session_start();
-include("../../backend/admin.php");
-include("../../backend/patient.php");
-if (!$_SESSION['currentUser']) {
-    header("Location:./login.php?login");
-}
-if (isset($_POST['logout'])) {
-    Admin::logout();
-    header("Location: ./login.php");
-}
+// session_start();
+// include("../../backend/admin.php");
+// include("../../backend/patient.php");
+// if (!$_SESSION['currentUser']) {
+//     header("Location:./login.php?login");
+// }
+// if (isset($_POST['logout'])) {
+//     Admin::logout();
+//     header("Location: ./login.php");
+// }
 ?>
 
 <head>
@@ -30,7 +30,7 @@ if (isset($_POST['logout'])) {
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-                        <p><?php echo $_SESSION['currentUser']['email']; ?></p>
+                        <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
                     </div>
                     <div class="logout">
                         <form method="post">
@@ -61,34 +61,31 @@ if (isset($_POST['logout'])) {
                     <div class="dashboard_body_body">                    
                     <!--clients infos-->
                     <div class="info_table">
-                        <table>
-                            <thead>
-                              <tr>
-                                <th scope="col">CIN</th>
-                                <th scope="col">nom complet</th>
-                                <th scope="col">sex</th>
-                              </tr>
-                              <tr class="border-bottom"></tr>
-                            </thead>
-                            <tbody>
-                              <tr>
-                                <td>xxxx</td>
-                                <td>1976</td>
-                                <td>9</td>
-                              </tr>
-                              <tr>
-                                <td>xxxx</td>
-                                <td>1976</td>
-                                <td>6</td>
-                              </tr>
-                              <!-- several other great bands -->
-                              <tr>
-                                <td>xxxx</td>
-                                <td>1974</td>
-                                <td>17</td>
-                              </tr>
-                            </tbody>
-                        </table>
+                        <div class="table_header">
+                            <div class="add_btn"></div>
+                            <div class="search"></div>
+                            <div class="action"></div>
+                        </div>
+                        <div class="table_body">
+                            <div class="table_body_nav">
+                                <div>cin</div>
+                                <div>nom complet</div>
+                                <div>sex</div>
+                                <div>action</div>
+                            </div>
+                            <!-- !add here -->
+                            <div class="table_body_content">
+                                <div>#2343523</div>
+                                <div>mossaab amimar</div>
+                                <div>homme</div>
+                                <div>
+                                    <form action="">
+                                        <button>tretement</button>
+                                        <button>add archive</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     </div>
                 </div>

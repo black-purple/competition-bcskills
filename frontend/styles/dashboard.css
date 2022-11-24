@@ -109,30 +109,17 @@
     opacity: 0.8;
 }
 
-
-  
-  thead th,
- 
-  
-  th {
-    letter-spacing: 2px;
-    padding: 20px;
+.info_table{
+    background-color: red;
+}
+/* .table_body{
     
-  }
-  
-  td {
-    letter-spacing: 1px;
-  }
-  
-  tbody td {
-    text-align: center;
-  }
-  table td{
-    border-bottom: 1px solid black;
-
-  }
-  tr.border-bottom {
-    border-bottom: 1px solid #ff000d;
-  }
-  
-  
+} */
+.table_body .table_body_nav{
+    background-color: blue;
+    display: flex;
+}
+.table_body .table_body_content{
+    background-color: rgb(112, 112, 191);
+    display: flex;
+}
