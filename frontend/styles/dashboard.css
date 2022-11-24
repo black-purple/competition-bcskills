@@ -123,7 +123,7 @@ a {
     background-color: blue;
     display: flex;
 }
-.table_body .table_body_content{
+.table_body .table_body_info{
     background-color: rgb(112, 112, 191);
     display: flex;
 }

@@ -79,8 +79,7 @@
                             </div>
                             <!-- !add here -->
                             <div class="table_body_content">
-                                <div>
-
+                                <div class="table_body_info">
                                     <div>#2343523</div>
                                     <div>mossaab amimar</div>
                                     <div>homme</div>
@@ -90,24 +89,8 @@
                                             <button>add archive</button>
                                         </form>
                                     </div>
-                                    <div>#2343523</div>
-                                    <div>mossaab amimar</div>
-                                    <div>homme</div>
-                                    <div>
-                                        <form action="">
-                                            <button>tretement</button>
-                                            <button>add archive</button>
-                                        </form>
-                                    </div>
-                                    <div>#2343523</div>
-                                    <div>mossaab amimar</div>
-                                    <div>homme</div>
-                                    <div>
-                                        <form action="">
-                                            <button>tretement</button>
-                                            <button>add archive</button>
-                                        </form>
-                                    </div>
+                                </div>
+                                <div class="table_body_info">
                                     <div>#2343523</div>
                                     <div>mossaab amimar</div>
                                     <div>homme</div>
