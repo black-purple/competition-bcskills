@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
->>>>>>> 414ef0fabd9a27aba47311cc3bab67ac545b44f9
 *{
     padding: 0;
     margin: 0;
@@ -73,7 +69,6 @@
 }
 /* ########## body ################ */
 .dashboard_body{
-<<<<<<< HEAD
     background-color: #fff;
     width: calc(100% - 230px);
 }
@@ -117,9 +112,3 @@
   }
   
   
-=======
-    background-color: #ffffff;
-    width: calc(100% - 230px);
-}
-
->>>>>>> 414ef0fabd9a27aba47311cc3bab67ac545b44f9
