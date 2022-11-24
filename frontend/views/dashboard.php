@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    session_start();
-    if (!$_SESSION['currentUser']) {
-        header("Location:./login.php?login");
-    }
+    // session_start();
+    // if (!$_SESSION['currentUser']) {
+    //     header("Location:./login.php?login");
+    // }
 ?>
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-                        <p><?php echo $_SESSION['currentUser']['email']?></p>
+                        <p><?php echo "User";// echo $_SESSION['currentUser']['email'] || 'User'?></p>
                     </div>
                     <div class="logout">
                         <form method="post"></form>
@@ -34,14 +34,59 @@
                     <p class="menu_title">Dashboard</p>
                     <div class="menu_elm">
                         <ul>
-                            <li>Dossier</li>
-                            <li>Archive</li>
+                            <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
+                            <li><i class="fa-solid fa-box-archive"></i>Archive</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="dashboard_body">
-                <div>body</div>
+                <div class="dashboard_body_nav">
+                    <div class="body_nav">
+                        <div class="icons"></div>
+                        <div class="title"> <span>Dashbords / </span> Default </div>
+                    </div>
+                </div>
+                <div class="body_wrapper">
+                    <div class="dashboard_body_body">                    
+                    <!--clients infos-->
+                    <div class="info_table">
+                        <table>
+                            
+                            <thead>
+                              <tr>
+                                <th scope="col">CIN</th>
+                                <th scope="col">nom complet</th>
+                                <th scope="col">sex</th>
+                              </tr>
+                              <tr class="border-bottom"></tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>xxxx</td>
+                                <td>1976</td>
+                                <td>9</td>
+                              </tr>
+                              <tr>
+                                <td>xxxx</td>
+                                <td>1976</td>
+                                <td>6</td>
+                              </tr>
+                          
+                              <!-- several other great bands -->
+                          
+                              <tr>
+                                <td>xxxx</td>
+                                <td>1974</td>
+                                <td>17</td>
+                              </tr>
+                            </tbody>
+                            
+                          </table>
+                          
+                    </div>
+                    </div>
+                </div>
             </div>              
         </div>
     </div>

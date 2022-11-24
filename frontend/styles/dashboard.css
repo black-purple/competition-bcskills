@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 .wrapper_all{
     background-color: aquamarine;
@@ -13,22 +15,23 @@
 }
 /* ########## sidebar ################ */
 .sidebar{
-    background-color: rebeccapurple;
+    background-color: #ffffff;
     width: 230px;
+    border-right: 1px solid rgba(182, 178, 178, 0.685);
 }
 .profile{
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    padding: 10px 10px;
 }
 .profile_imgname{
-    background-color: red;
+    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 80px;
+    width: 90px;
 }
 .profile_imgname .profile_img{
     background-image: url("../assets/profile.jpg");
@@ -39,8 +42,73 @@
     height: 40px;
     border-radius: 50px;
 }
+.menu{
+    /* background-color: rosybrown; */
+    padding: 0 10px;
+    margin: 50px 0 0 0;
+}
+.menu_title{
+    color: #615a5a;
+    padding: 0 0 15px 0;
+    font-weight: 500;
+}
+.menu_elm ul{
+    /* background-color: aqua; */
+    list-style-type: none;
+}
+.menu_elm li{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+.active{
+    background-color: rgba(180, 172, 172, 0.503);
+}
+.menu_elm li i{
+    padding: 0 10px;
+}
 /* ########## body ################ */
 .dashboard_body{
-    background-color: blue;
+    background-color: #fff;
     width: calc(100% - 230px);
 }
+
+.body_nav{
+    margin: 2rem 3rem;
+}
+.body_nav .title{
+    font-size: 1.4rem;
+    color:  #0f172a;
+    letter-spacing: 2px;
+}
+.body_nav .title span{
+    opacity: 0.8;
+}
+
+
+  
+  thead th,
+ 
+  
+  th {
+    letter-spacing: 2px;
+    padding: 20px;
+    
+  }
+  
+  td {
+    letter-spacing: 1px;
+  }
+  
+  tbody td {
+    text-align: center;
+  }
+  table td{
+    border-bottom: 1px solid black;
+
+  }
+  tr.border-bottom {
+    border-bottom: 1px solid #ff000d;
+  }
+  
+  
