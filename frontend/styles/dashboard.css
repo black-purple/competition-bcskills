@@ -13,10 +13,20 @@
     background-color: red;
     height: 100vh;
 }
+
+.logout-btn {
+    border: none;
+    padding: .3rem;
+    background-color: lightpink;
+    color: crimson;
+    border: .1rem solid crimson;    
+    border-radius: .3rem;
+    cursor: pointer;
+}
 /* ########## sidebar ################ */
 .sidebar{
     background-color: #ffffff;
-    width: 230px;
+    width: 250px;
     border-right: 1px solid rgba(182, 178, 178, 0.685);
 }
 .profile{
@@ -72,7 +82,7 @@
 /* ########## body ################ */
 .dashboard_body{
     background-color: #fff;
-    width: calc(100% - 230px);
+    width: calc(100% - 250px);
 }
 
 .body_nav{

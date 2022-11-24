@@ -9,8 +9,8 @@
 .login-alert{
     background-color: lightpink;
     color: crimson;
-    padding: 1rem;
     border: .1rem solid crimson;
+    padding: 1rem;
     border-radius: .2rem;
     width: 34rem;
     text-align: center;
