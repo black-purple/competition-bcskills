@@ -1,0 +1,13 @@
+
+
+.login_container{
+    display : "flexbox" ; 
+    flex-direction : "column" ; 
+    align-items : "center" ; 
+    justify-content: "center";
+}
+
+.title .brand{
+    text-align : "center" ; 
+    background: #019CDE;
+}
