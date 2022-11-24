@@ -32,8 +32,8 @@ class Patient {
         Patient::db()->exec("UPDATE patient SET numDossier='$numDossier', cin='$cin', nomComplet='$nomComplet', dateNaissance='$dateNaissance', sexe='$sexe', profession='$profession', tel='$tel', adresse='$adresse', numSecSociale='$numSecSociale', mutuelle='$mutuelle', payeurs='$payeurs', dAlertes='$dAlertes'");
     }
 
-    static public function archivePatient($numDossier) {
-        Patient::db()->exec("UPDATE patient SET archive='1' WHERE numDossier='$numDossier'");
+    static public function archivePatient($cin) {
+        Patient::db()->exec("UPDATE patient SET archive='1' WHERE cin='$cin'");
     }
 
 }
