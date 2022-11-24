@@ -11,17 +11,17 @@ class Patient {
     }
 
     static public function getPatient($numDossier) {
-        $patient = Patient::db()->exec("SELECT * FROM patient WHERE numDossier='$numDossier'");
+        $patient = Patient::db()->query("SELECT * FROM patient WHERE numDossier='$numDossier'");
         return $patient;
     }
     
     static public function getAllPatient() {
-        $patients = Patient::db()->exec("SELECT * FROM patient");
+        $patients = Patient::db()->query("SELECT * FROM patient");
         return $patients;
     }
 
     static public function addPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes) {
-        Patient::db()->exec("INSERT INTO patient()");
+        Patient::db()->exec("INSERT INTO patient(numDossier, cin, nomComplet, dateNaissance, sexe, profession, tel, adresse, numSecSociale,payeurs,mutuelle, dAlertes)VALUES($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes)");
     }
 
     static public function editPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){

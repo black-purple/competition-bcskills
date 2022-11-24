@@ -16,15 +16,14 @@ class Traitement {
             return $traitement;
         }
         return false;
-        // TODO: liste
     }
     
     static public function getPatientTraitements($numDossierPatient) {
         $traits = Patient::db()->query("SELECT * FROM traitement WHERE numDossier='$numDossierPatient'");
         if ($traits->rowCount() > 1) {
-
+            return $traits;
         }
-        return $traits;
+        return false;
     }
 
     static public function addTraitement($numDossier) {
