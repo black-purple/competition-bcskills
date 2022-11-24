@@ -2,6 +2,7 @@
 <html lang="en">
 <?php
     include("../../backend/admin.php"); 
+    session_start();
     if(isset($_POST['login'])) {
         Admin::login($_POST['email'], $_POST['passwd']);
     }
@@ -12,6 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/login.css">
     <title>Login &bull; Healthcare</title>
+    <script defer src="../js/login.js"></script>
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -48,6 +50,9 @@
             </form>
         </div>
     </div>
+    <?php if (isset($_GET['login'])) {
+        echo "<div class='login-alert'>Il faut se connecter avant de pouvoir acceder au dossiers <span id='closeerr'>&cross;</span></div>";
+    }?>
 
 
 </body>

@@ -15,8 +15,12 @@ class Patient {
         return $patient;
     }
     
-    static public function getAllPatient() {
-        $patients = Patient::db()->query("SELECT * FROM patient");
+    static public function getAllPatient($archived=false) {
+        if ($archived) {
+            $patients = Patient::db()->query("SELECT * FROM patient WHERE archive='1'");
+        } else {
+            $patients = Patient::db()->query("SELECT * FROM patient WHERE archive='0'");
+        }
         return $patients;
     }
 

@@ -6,10 +6,44 @@
     font-family: 'Inter', sans-serif;
 
 }
+.login-alert{
+    background-color: lightpink;
+    color: crimson;
+    border: .1rem solid crimson;
+    padding: 1rem;
+    border-radius: .2rem;
+    width: 34rem;
+    text-align: center;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.393);
+}
+.fade {
+    transition: opacity .5s ease-out;
+    opacity: 0;
+}
+
+
+#closeerr {
+    cursor: pointer;
+    color: white;
+    margin-inline: 2rem;
+    height: 1rem;
+    width: 1rem;
+    padding: .5rem .7rem;
+    border-radius: 50%;
+    border:  .1rem solid white;
+    transition: color .3s ease-in-out;
+}
+
+#closeerr:hover{
+    color: crimson;
+    background-color: white;
+}
 body{
+    height: 100vh;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: column;
 }
 .login_container{
    margin-top: 5rem;

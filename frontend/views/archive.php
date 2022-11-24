@@ -1,12 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-<<<<<<< HEAD
-    session_start();
-    if (!$_SESSION['currentUser']) {
-        header("Location:./login.php?login");
-    }
-=======
 session_start();
 include("../../backend/admin.php");
 include("../../backend/patient.php");
@@ -17,7 +11,6 @@ if (isset($_POST['logout'])) {
     Admin::logout();
     header("Location: ./login.php");
 }
->>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
 ?>
 
 <head>
@@ -37,11 +30,7 @@ if (isset($_POST['logout'])) {
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-<<<<<<< HEAD
-                        <p><?php echo $_SESSION['currentUser']['email']?></p>
-=======
                         <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
->>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
                     </div>
                     <div class="logout">
                         <form method="post">
@@ -56,25 +45,25 @@ if (isset($_POST['logout'])) {
                     <div class="menu_elm">
                         <ul>
                             <a href="./dashboard.php">
-                                <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
+                                <li><i class="fa-regular fa-folder"></i>Dossier</li>
                             </a>
                             <a href="./archive.php">
-                                <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                                <li class="active"><i class="fa-solid fa-box-archive"></i>Archive</li>
                             </a>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="dashboard_body">
-                <div>
-                    <!--navigation-->
+                <div class="dashboard_body_nav">
                     <div class="body_nav">
                         <div class="icons"></div>
-                        <div class="title"> <span>Dashbord / </span> Dossier </div>
+                        <div class="title"> <span>Dashbord / </span> Archive </div>
                     </div>
-                    
+                </div>
+                <div class="body_wrapper">
+                    <div class="dashboard_body_body">                    
                     <!--clients infos-->
-
                     <div class="info_table">
                         <div class="table_header">
                             <div class="add_btn"></div>
@@ -91,7 +80,7 @@ if (isset($_POST['logout'])) {
                             <!-- !add here -->
                             <div class="table_body_content">
                             <?php
-                            $patients = Patient::getAllPatient();
+                            $patients = Patient::getAllPatient(true);
                             foreach($patients as $patient) {
                                 echo "<div class='table_body_info'>
                                 <div>".$patient['cin']."</div>
@@ -109,7 +98,7 @@ if (isset($_POST['logout'])) {
                             </div>
                         </div>
                     </div>
-
+                    </div>
                 </div>
             </div>
         </div>
