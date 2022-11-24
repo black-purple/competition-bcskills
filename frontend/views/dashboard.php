@@ -11,6 +11,9 @@ if (isset($_POST['logout'])) {
     Admin::logout();
     header("Location: ./login.php");
 }
+if (isset($_POST['archive'])) {
+    Patient::archivePatient($_POST['cin']);
+}
 ?>
 
 <head>
@@ -83,37 +86,24 @@ if (isset($_POST['logout'])) {
                                 <div class="sex">sex</div>
                                 <div class="action">action</div>
                             </div>
-                            <!-- !add here -->
-                            <!-- <div class="table_body_content">
-                                <div class="table_body_info">
-                                    <div class="info_cin"><a href="/">#2343523</a></div>
-                                    <div class="info_fullname">mossaab amimar</div>
-                                    <div class="info_sex">homme</div>
-                                    <div class="action_info">
-                                        <form action="">
-                                            <button class="traitement btn_dash">traitement</button>
-                                            <button class="btn_dash">add archive</button>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div> -->
                             <?php
-                            $patients = Patient::getAllPatient();
-                            foreach($patients as $patient) {
-                                echo "<div class='table_body_content'>
-                                <div class='table_body_info'>
-                                    <div class='info_cin'><a href="/">".$patient['cin']."</a></div>
-                                    <div class='info_fullname'>".$patient['nomComplet']."</div>
-                                    <div class='info_sex'>".$patient['sexe']."</div>
-                                    <div class='action_info'>
-                                        <form action''>
-                                            <button class='traitement btn_dash'>traitement</button>
-                                            <button class='btn_dash'>add archive</button>
-                                        </form>
+                                $patients = Patient::getAllPatient();
+                                foreach($patients as $patient) {
+                                    echo "<div class='table_body_content'>
+                                    <div class='table_body_info'>
+                                        <div class='info_cin'><a href=''>".$patient['cin']."</a></div>
+                                        <div class='info_fullname'>".$patient['nomComplet']."</div>
+                                        <div class='info_sex'>".$patient['sexe']."</div>
+                                        <div class='action_info'>
+                                            <form method='post'>
+                                                <input type='hidden' value=".$patient['cin']." name='cin'>
+                                                <button class='traitement btn_dash'>traitement</button>
+                                                <button class='btn_dash' type='submit' name='archive'><i class='fa-solid fa-box-archive'></i> &nbsp;Archive</button>
+                                            </form>
+                                        </div>
                                     </div>
-                                </div>
-                                </div>";
-                            }
+                                    </div>";
+                                }
                             ?>
                             </div>
                         </div>
