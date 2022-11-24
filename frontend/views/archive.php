@@ -19,7 +19,7 @@ if (isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <script src="https://kit.fontawesome.com/8579b38148.js" crossorigin="anonymous"></script>
-    <title>Dashboard &bull; Healthcare</title>
+    <title>Archive &bull; Healthcare</title>
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -45,10 +45,10 @@ if (isset($_POST['logout'])) {
                     <div class="menu_elm">
                         <ul>
                             <a href="./dashboard.php">
-                                <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
+                                <li><i class="fa-regular fa-folder"></i>Dossier</li>
                             </a>
                             <a href="./archive.php">
-                                <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                                <li class="active"><i class="fa-solid fa-box-archive"></i>Archive</li>
                             </a>
                         </ul>
                     </div>
@@ -69,7 +69,7 @@ if (isset($_POST['logout'])) {
 
                                 <thead>
                                     <tr>
-                                        <th scope="col">CIN</th>
+                                    <th scope="col">CIN</th>
                                         <th scope="col">NOM COMPLET</th>
                                         <th scope="col">SEXE</th>
                                     </tr>
@@ -77,7 +77,7 @@ if (isset($_POST['logout'])) {
                                 </thead>
                                 <tbody>
                                     <?php
-                                        $patients = Patient::getAllPatient();
+                                        $patients = Patient::getAllPatient(true);
                                         foreach($patients as $patient) {
                                             echo "<tr>
                                                 <td>".$patient['cin']."</td>

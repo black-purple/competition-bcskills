@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
 *{
+    text-decoration: none;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -22,6 +23,9 @@
     border: .1rem solid crimson;    
     border-radius: .3rem;
     cursor: pointer;
+}
+a {
+    color: #0f172a;
 }
 /* ########## sidebar ################ */
 .sidebar{
