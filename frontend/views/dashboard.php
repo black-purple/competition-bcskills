@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-// session_start();
-// include("../../backend/admin.php");
-// include("../../backend/patient.php");
-// if (!$_SESSION['currentUser']) {
-//     header("Location:./login.php?login");
-// }
-// if (isset($_POST['logout'])) {
-//     Admin::logout();
-//     header("Location: ./login.php");
-// }
+session_start();
+include("../../backend/admin.php");
+include("../../backend/patient.php");
+if (!$_SESSION['currentUser']) {
+    header("Location:./login.php?login");
+}
+if (isset($_POST['logout'])) {
+    Admin::logout();
+    header("Location: ./login.php");
+}
 ?>
 
 <head>
@@ -79,28 +79,22 @@
                             </div>
                             <!-- !add here -->
                             <div class="table_body_content">
-                                <div class="table_body_info">
-                                    <div>#2343523</div>
-                                    <div>mossaab amimar</div>
-                                    <div>homme</div>
-                                    <div>
-                                        <form action="">
-                                            <button>tretement</button>
-                                            <button>add archive</button>
-                                        </form>
-                                    </div>
+                            <?php
+                            $patients = Patient::getAllPatient();
+                            foreach($patients as $patient) {
+                                echo "<div class='table_body_info'>
+                                <div>".$patient['cin']."</div>
+                                <div>".$patient['nomComplet']."</div>
+                                <div>".$patient['sexe']."</div>
+                                <div>
+                                <form method='post'>
+                                <button>Ajouter Traitement</button>
+                                <button>Archiver</button>
+                                </form>
                                 </div>
-                                <div class="table_body_info">
-                                    <div>#2343523</div>
-                                    <div>mossaab amimar</div>
-                                    <div>homme</div>
-                                    <div>
-                                        <form action="">
-                                            <button>tretement</button>
-                                            <button>add archive</button>
-                                        </form>
-                                    </div>
-                                </div>
+                                </div>";
+                            }
+                            ?>
                             </div>
                         </div>
                     </div>
