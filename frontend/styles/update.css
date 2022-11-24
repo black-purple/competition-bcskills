@@ -82,7 +82,7 @@ a {
 }
 .form_container{
     
-    display: flex;
+    /* display: flex; */
     gap: 20px;
     margin-bottom: 1.5rem;
 

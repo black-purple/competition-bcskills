@@ -28,8 +28,12 @@
                     <p class="menu_title">Dashboard</p>
                     <div class="menu_elm">
                         <ul>
-                            <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
-                            <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                            <a href="./dashboard.php">
+                                <li class="active"><i class="fa-regular fa-folder"></i>Dossier</li>
+                            </a>
+                            <a href="./archive.php">
+                                <li><i class="fa-solid fa-box-archive"></i>Archive</li>
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -48,10 +52,10 @@
                     <!--identification-->
                     <div class="form_container">
                         <div class="form_title">identification : </div>
-                        <div class="form" action="">
+                        <form class="form" action="">
                             <div class="row">
                                 <div class="item">
-                                    <label for="">nom complet</label> <br>
+                                    <label for="">nom complet</label><br>
                                     <input type="text">
                                 </div>
                                 <div class="item">
@@ -68,19 +72,19 @@
                                     <input type="number">
                                 </div>
                             </div>
-
-                        <div class="row">
-                            <div class="item">
-                                <label for="">CIN</label> <br>
-                                <input type="number">
-                               </div>
-                               <div class="item">
-                                <label for="">date de naissance</label> <br>
-                                <input type="date">
-                               </div>
-                        </div>
+                            <div class="row">
+                                <div class="item">
+                                    <label for="">CIN</label> <br>
+                                    <input type="number">
+                                </div>
+                                <div class="item">
+                                    <label for="">date de naissance</label> <br>
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <!--informations administratives-->
+                        <!--informations administratives-->
                     <form class="form_container">
                         <div class="form_title">informations : </div>
                         <div class="form">
