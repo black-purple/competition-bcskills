@@ -30,11 +30,7 @@ if (isset($_POST['logout'])) {
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-<<<<<<< HEAD
                         <p><?php echo $_SESSION['currentUser']['email']?></p>
-=======
-                        <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
->>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
                     </div>
                     <div class="logout">
                         <form method="post">
