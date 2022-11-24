@@ -1,6 +1,6 @@
 <?php
 class Traitement {
-    static public function connexion() {
+    static public function db() {
         try {
             $servername = "localhost";
             $conn = new PDO("mysql:host=$servername;dbname=bcskills", "root", "");
@@ -11,15 +11,24 @@ class Traitement {
     }
 
     static public function getTraitement($numTraitement) {
-        Patient::connexion()->exec("SELECT * FROM traitement WHERE numTraitement='$numTraitement'");
+        $traitement = Patient::db()->query("SELECT * FROM traitement WHERE numTraitement='$numTraitement'");
+        if ($traitement->rowCount() > 0) {
+            return $traitement;
+        }
+        return false;
+        // TODO: liste
     }
     
     static public function getPatientTraitements($numDossierPatient) {
-        Patient::connexion()->exec("SELECT * FROM traitement WHERE numDossier='$numDossierPatient'");
+        $traits = Patient::db()->query("SELECT * FROM traitement WHERE numDossier='$numDossierPatient'");
+        if ($traits->rowCount() > 1) {
+
+        }
+        return $traits;
     }
 
     static public function addTraitement($numDossier) {
-        Patient::connexion()->exec("INSERT INTO traitement(nomMedecin, dateRencontre,detailsRencontre,conclusion,decision) WHERE numDossier='$numDossier'");
+        Patient::db()->exec("INSERT INTO traitement(nomMedecin, dateRencontre,detailsRencontre,conclusion,decision) WHERE numDossier='$numDossier'");
     }
 
 }
