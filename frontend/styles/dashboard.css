@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-=======
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
->>>>>>> 414ef0fabd9a27aba47311cc3bab67ac545b44f9
 *{
     padding: 0;
     margin: 0;
@@ -73,7 +69,53 @@
 }
 /* ########## body ################ */
 .dashboard_body{
+<<<<<<< HEAD
     background-color: #ffffff;
     width: calc(100% - 230px);
 }
 
+=======
+    background-color: #fff;
+    width: calc(100% - 230px);
+}
+
+.body_nav{
+    margin: 2rem 3rem;
+}
+.body_nav .title{
+    font-size: 1.4rem;
+    color:  #0f172a;
+    letter-spacing: 2px;
+}
+.body_nav .title span{
+    opacity: 0.8;
+}
+
+
+  
+  thead th,
+ 
+  
+  th {
+    letter-spacing: 2px;
+    padding: 20px;
+    
+  }
+  
+  td {
+    letter-spacing: 1px;
+  }
+  
+  tbody td {
+    text-align: center;
+  }
+  table td{
+    border-bottom: 1px solid black;
+
+  }
+  tr.border-bottom {
+    border-bottom: 1px solid #ff000d;
+  }
+  
+  
+>>>>>>> 3df503c576c08be3f386dd4dd14e9021470ca375
