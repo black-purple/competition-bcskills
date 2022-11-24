@@ -69,12 +69,6 @@
 }
 /* ########## body ################ */
 .dashboard_body{
-<<<<<<< HEAD
-    background-color: #ffffff;
-    width: calc(100% - 230px);
-}
-
-=======
     background-color: #fff;
     width: calc(100% - 230px);
 }
@@ -118,4 +112,3 @@
   }
   
   
->>>>>>> 3df503c576c08be3f386dd4dd14e9021470ca375

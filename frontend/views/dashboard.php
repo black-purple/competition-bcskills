@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-    // session_start();
-    // if (!$_SESSION['currentUser']) {
-    //     header("Location:./login.php?login");
-    // }
+    session_start();
+    if (!$_SESSION['currentUser']) {
+        header("Location:./login.php?login");
+    }
 ?>
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-                        <p><?php echo "User";// echo $_SESSION['currentUser']['email'] || 'User'?></p>
+                        <p><?php echo $_SESSION['currentUser']['email']?></p>
                     </div>
                     <div class="logout">
                         <form method="post"></form>
@@ -41,15 +41,15 @@
                 </div>
             </div>
             <div class="dashboard_body">
-                <div class="dashboard_body_nav">
+                <div>
+                    <!--navigation-->
                     <div class="body_nav">
                         <div class="icons"></div>
                         <div class="title"> <span>Dashbords / </span> Default </div>
                     </div>
-                </div>
-                <div class="body_wrapper">
-                    <div class="dashboard_body_body">                    
+                    
                     <!--clients infos-->
+
                     <div class="info_table">
                         <table>
                             
@@ -85,7 +85,7 @@
                           </table>
                           
                     </div>
-                    </div>
+
                 </div>
             </div>              
         </div>
