@@ -20,11 +20,11 @@ class Patient {
         Patient::connexion()->exec("SELECT * FROM patient");
     }
 
-    static public function addPatient($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes) {
+    static public function addPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes) {
         Patient::connexion()->exec("INSERT INTO patient()");
     }
 
-    static public function editPatient($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){
+    static public function editPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){
         Patient::connexion()->exec("UPDATE patient SET numDossier='$numDossier', cin='$cin', nomComplet='$nomComplet', dateNaissance='$dateNaissance', sexe='$sexe', profession='$profession', tel='$tel', adresse='$adresse', numSecSociale='$numSecSociale', mutuelle='$mutuelle', payeurs='$payeurs', dAlertes='$dAlertes'");
     }
 
