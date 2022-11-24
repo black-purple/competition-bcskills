@@ -112,6 +112,7 @@ a {
 .form .row{
     display: flex;
     margin-bottom: 1rem;
+    gap: 10px;
 }
 .btn{
     display: flex;
@@ -127,4 +128,12 @@ a {
     color: #fff;
     background: #019CDE;
     border-radius: 12px;
+}
+input[type=date] ,select  {
+    
+    padding:0 5px;
+    width: 100%;
+    
+   
+    
 }

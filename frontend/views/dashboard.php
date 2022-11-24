@@ -66,31 +66,51 @@ if (isset($_POST['logout'])) {
 
                     <div class="info_table">
                         <div class="table_header">
-                            <div class="add_btn"></div>
-                            <div class="search"></div>
-                            <div class="action"></div>
+                            <div class="add_btn">
+                                <form action="">
+                                    <button class="add_btn_pat">add patient</button>
+                                </form>
+                            </div>
+                            <div class="search">
+                                <input type="input" placeholder="search">
+                            </div>
+                            <!-- <div class="action">d</div> -->
                         </div>
                         <div class="table_body">
                             <div class="table_body_nav">
-                                <div>cin</div>
-                                <div>nom complet</div>
-                                <div>sex</div>
-                                <div>action</div>
+                                <div class="cin">cin</div>
+                                <div class="fullname">nom complet</div>
+                                <div class="sex">sex</div>
+                                <div class="action">action</div>
                             </div>
                             <!-- !add here -->
-                            <div class="table_body_content">
+                            <!-- <div class="table_body_content">
+                                <div class="table_body_info">
+                                    <div class="info_cin"><a href="/">#2343523</a></div>
+                                    <div class="info_fullname">mossaab amimar</div>
+                                    <div class="info_sex">homme</div>
+                                    <div class="action_info">
+                                        <form action="">
+                                            <button class="traitement btn_dash">traitement</button>
+                                            <button class="btn_dash">add archive</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> -->
                             <?php
                             $patients = Patient::getAllPatient();
                             foreach($patients as $patient) {
-                                echo "<div class='table_body_info'>
-                                <div>".$patient['cin']."</div>
-                                <div>".$patient['nomComplet']."</div>
-                                <div>".$patient['sexe']."</div>
-                                <div>
-                                <form method='post'>
-                                <button>Ajouter Traitement</button>
-                                <button>Archiver</button>
-                                </form>
+                                echo "<div class='table_body_content'>
+                                <div class='table_body_info'>
+                                    <div class='info_cin'><a href="/">".$patient['cin']."</a></div>
+                                    <div class='info_fullname'>".$patient['nomComplet']."</div>
+                                    <div class='info_sex'>".$patient['sexe']."</div>
+                                    <div class='action_info'>
+                                        <form action''>
+                                            <button class='traitement btn_dash'>traitement</button>
+                                            <button class='btn_dash'>add archive</button>
+                                        </form>
+                                    </div>
                                 </div>
                                 </div>";
                             }
