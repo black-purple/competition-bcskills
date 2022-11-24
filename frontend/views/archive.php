@@ -19,7 +19,7 @@ if (isset($_POST['logout'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/dashboard.css">
     <script src="https://kit.fontawesome.com/8579b38148.js" crossorigin="anonymous"></script>
-    <title>Archive &bull; Healthcare</title>
+    <title>Dashboard &bull; Healthcare</title>
     <link rel="shortcut icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -30,7 +30,7 @@ if (isset($_POST['logout'])) {
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
-                        <p><?php echo $_SESSION['currentUser']['email']; ?></p>
+                        <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
                     </div>
                     <div class="logout">
                         <form method="post">
@@ -58,39 +58,46 @@ if (isset($_POST['logout'])) {
                 <div class="dashboard_body_nav">
                     <div class="body_nav">
                         <div class="icons"></div>
-                        <div class="title"> <span>Dashbord / </span> Dossier </div>
+                        <div class="title"> <span>Dashbord / </span> Archive </div>
                     </div>
                 </div>
                 <div class="body_wrapper">
-                    <div class="dashboard_body_body">
-                        <!--clients infos-->
-                        <div class="info_table">
-                            <table>
-
-                                <thead>
-                                    <tr>
-                                    <th scope="col">CIN</th>
-                                        <th scope="col">NOM COMPLET</th>
-                                        <th scope="col">SEXE</th>
-                                    </tr>
-                                    <tr class="border-bottom"></tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                        $patients = Patient::getAllPatient(true);
-                                        foreach($patients as $patient) {
-                                            echo "<tr>
-                                                <td>".$patient['cin']."</td>
-                                                <td>".$patient['nomComplet']."</td>
-                                                <td>".$patient['sexe']."</td>
-                                            </tr>";                                            
-                                        }
-                                    ?>
-                                </tbody>
-
-                            </table>
-
+                    <div class="dashboard_body_body">                    
+                    <!--clients infos-->
+                    <div class="info_table">
+                        <div class="table_header">
+                            <div class="add_btn"></div>
+                            <div class="search"></div>
+                            <div class="action"></div>
                         </div>
+                        <div class="table_body">
+                            <div class="table_body_nav">
+                                <div>cin</div>
+                                <div>nom complet</div>
+                                <div>sex</div>
+                                <div>action</div>
+                            </div>
+                            <!-- !add here -->
+                            <div class="table_body_content">
+                            <?php
+                            $patients = Patient::getAllPatient(true);
+                            foreach($patients as $patient) {
+                                echo "<div class='table_body_info'>
+                                <div>".$patient['cin']."</div>
+                                <div>".$patient['nomComplet']."</div>
+                                <div>".$patient['sexe']."</div>
+                                <div>
+                                <form method='post'>
+                                <button>Ajouter Traitement</button>
+                                <button>Archiver</button>
+                                </form>
+                                </div>
+                                </div>";
+                            }
+                            ?>
+                            </div>
+                        </div>
+                    </div>
                     </div>
                 </div>
             </div>

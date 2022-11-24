@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php
-// session_start();
-// include("../../backend/admin.php");
-// include("../../backend/patient.php");
-// if (!$_SESSION['currentUser']) {
-//     header("Location:./login.php?login");
-// }
-// if (isset($_POST['logout'])) {
-//     Admin::logout();
-//     header("Location: ./login.php");
-// }
+session_start();
+include("../../backend/admin.php");
+include("../../backend/patient.php");
+if (!$_SESSION['currentUser']) {
+    header("Location:./login.php?login");
+}
+if (isset($_POST['logout'])) {
+    Admin::logout();
+    header("Location: ./login.php");
+}
 ?>
 
 <head>
@@ -30,7 +30,11 @@
                 <div class="profile">
                     <div class="profile_imgname">
                         <div class="profile_img"></div>
+<<<<<<< HEAD
+                        <p><?php echo $_SESSION['currentUser']['email']?></p>
+=======
                         <p><?php echo "user";//$_SESSION['currentUser']['email']; ?></p>
+>>>>>>> 007843d3f70204d19fd9f4d22905079a76928c69
                     </div>
                     <div class="logout">
                         <form method="post">
@@ -55,15 +59,15 @@
                 </div>
             </div>
             <div class="dashboard_body">
-                <div class="dashboard_body_nav">
+                <div>
+                    <!--navigation-->
                     <div class="body_nav">
                         <div class="icons"></div>
                         <div class="title"> <span>Dashbord / </span> Dossier </div>
                     </div>
-                </div>
-                <div class="body_wrapper">
-                    <div class="dashboard_body_body">                    
+                    
                     <!--clients infos-->
+
                     <div class="info_table">
                         <div class="table_header">
                             <div class="add_btn">
@@ -84,7 +88,7 @@
                                 <div class="action">action</div>
                             </div>
                             <!-- !add here -->
-                            <div class="table_body_content">
+                            <!-- <div class="table_body_content">
                                 <div class="table_body_info">
                                     <div class="info_cin"><a href="/">#2343523</a></div>
                                     <div class="info_fullname">mossaab amimar</div>
@@ -96,23 +100,29 @@
                                         </form>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="table_body_content">
-                                <div class="table_body_info">
-                                    <div class="info_cin"><a href="/">#2343523</a></div>
-                                    <div class="info_fullname">mossaab amimar</div>
-                                    <div class="info_sex">homme</div>
-                                    <div class="action_info">
-                                        <form action="">
-                                            <button class="traitement btn_dash">traitement</button>
-                                            <button class="btn_dash">add archive</button>
+                            </div> -->
+                            <?php
+                            $patients = Patient::getAllPatient();
+                            foreach($patients as $patient) {
+                                echo "<div class='table_body_content'>
+                                <div class='table_body_info'>
+                                    <div class='info_cin'><a href="/">".$patient['cin']."</a></div>
+                                    <div class='info_fullname'>".$patient['nomComplet']."</div>
+                                    <div class='info_sex'>".$patient['sexe']."</div>
+                                    <div class='action_info'>
+                                        <form action''>
+                                            <button class='traitement btn_dash'>traitement</button>
+                                            <button class='btn_dash'>add archive</button>
                                         </form>
                                     </div>
                                 </div>
+                                </div>";
+                            }
+                            ?>
                             </div>
                         </div>
                     </div>
-                    </div>
+
                 </div>
             </div>
         </div>

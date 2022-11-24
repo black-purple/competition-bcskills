@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+.wrapper_all{
+    background-color: #fff;
+}
+.wrapper{
+    display: flex;
+    height: 100vh;
+}
+/* ########## sidebar ################ */
+.sidebar{
+    background-color: #ffffff;
+    width: 230px;
+    border-right: 1px solid rgba(182, 178, 178, 0.685);
+}
+.profile{
+    /* background-color: yellowgreen; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px;
+}
+.profile_imgname{
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90px;
+}
+.profile_imgname .profile_img{
+    background-image: url("../assets/profile.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+.menu{
+    /* background-color: rosybrown; */
+    padding: 0 10px;
+    margin: 50px 0 0 0;
+}
+.menu_title{
+    color: #615a5a;
+    padding: 0 0 15px 0;
+    font-weight: 500;
+}
+.menu_elm ul{
+    /* background-color: aqua; */
+    list-style-type: none;
+}
+.menu_elm li{
+    padding: 5px 0;
+    display: flex;
+    align-items: center;
+}
+.active{
+    background-color: rgba(180, 172, 172, 0.503);
+}
+.menu_elm li i{
+    padding: 0 10px;
+}
+
+/*****FORMS*****/
+.forms{
+    margin-top: 3rem;
+    margin-left: 3rem;
+    display: flex;
+   
+    flex-direction: column;
+}
+.form_container{
+    
+    display: flex;
+    gap: 20px;
+    margin-bottom: 1.5rem;
+
+}
+.form_container .form_title{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.form{
+    margin-top: 5px;
+}
+.form label{
+    color: #090e1a;
+    text-transform: capitalize;
+    
+}
+.form input , select{
+    margin-top: 8px;
+    padding: 16px;
+    height: 30px;
+    width: 80%;
+    font-size: 1.1rem ;
+    border: 1px solid #5C73DB;
+    border-radius: 12px;
+}
+
+.form .row{
+    display: flex;
+    margin-bottom: 1rem;
+    gap: 10px;
+}
+.btn{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+.btn_update{
+    outline: 0;
+    text-align: center;
+    font-size: 1rem;
+    width: 400px;
+    height: 48px;
+    color: #fff;
+    background: #019CDE;
+    border-radius: 12px;
+}
+input[type=date] ,select  {
+    
+    padding:0 5px;
+    width: 100%;
+    
+   
+    
+}
