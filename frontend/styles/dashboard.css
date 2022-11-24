@@ -69,6 +69,15 @@
 .menu_elm li i{
     padding: 0 10px;
 }
+/* ############ nav ############### */
+.dashboard_body_nav{
+    background-color: red;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
 /* ########## body ################ */
 .dashboard_body{
     background-color: #fff;
@@ -78,8 +87,11 @@
 .body_nav{
     margin: 2rem 3rem;
 }
+.body_wrapper{
+    margin: 2rem 3rem;
+}
 .body_nav .title{
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     color:  #0f172a;
     letter-spacing: 2px;
 }

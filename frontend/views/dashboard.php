@@ -52,7 +52,6 @@
                     <!--clients infos-->
                     <div class="info_table">
                         <table>
-                            
                             <thead>
                               <tr>
                                 <th scope="col">CIN</th>
@@ -72,18 +71,14 @@
                                 <td>1976</td>
                                 <td>6</td>
                               </tr>
-                          
                               <!-- several other great bands -->
-                          
                               <tr>
                                 <td>xxxx</td>
                                 <td>1974</td>
                                 <td>17</td>
                               </tr>
                             </tbody>
-                            
-                          </table>
-                          
+                        </table>
                     </div>
                     </div>
                 </div>
