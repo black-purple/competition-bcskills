@@ -16,8 +16,9 @@ class Admin {
         if ($response->rowCount() > 0){
             $data =  $response->fetch();
             $_SESSION['currentUser']['email'] = $data['email'];
+            header("Location:./dashboard.html");
         }else{
-            return false;
+            echo "<script>alert('verifier votre mail ou mot de passe');</script>";
         }
     }
 
