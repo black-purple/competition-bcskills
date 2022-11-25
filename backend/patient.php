@@ -10,8 +10,8 @@ class Patient {
         }
     }
 
-    static public function getPatient($numDossier) {
-        $patient = Patient::db()->query("SELECT * FROM patient WHERE numDossier='$numDossier'");
+    static public function getPatient($cin) {
+        $patient = Patient::db()->query("SELECT * FROM patient WHERE cin='$cin'");
         return $patient;
     }
     
@@ -25,11 +25,12 @@ class Patient {
     }
 
     static public function addPatient($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes) {
-        Patient::db()->exec("INSERT INTO patient(cin, nomComplet, dateNaissance, sexe, profession, tel, adresse, numSecSociale, payeurs, mutuelle, dAlertes) VALUES($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes)");
+        $sql = "INSERT INTO patient(cin, nomComplet, dateNaissance, sexe, profession, tel, adresse, numSecSociale, payeurs, mutuelle, dAlertes) VALUES('$cin', '$nomComplet', '$dateNaissance', '$sexe', '$profession',' $tel', '$adresse', '$numSecSociale', '$payeurs', '$mutuelle', '$dAlertes')";
+        Patient::db()->exec($sql);
     }
 
-    static public function editPatient($numDossier, $cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){
-        Patient::db()->exec("UPDATE patient SET numDossier='$numDossier', cin='$cin', nomComplet='$nomComplet', dateNaissance='$dateNaissance', sexe='$sexe', profession='$profession', tel='$tel', adresse='$adresse', numSecSociale='$numSecSociale', mutuelle='$mutuelle', payeurs='$payeurs', dAlertes='$dAlertes'");
+    static public function editPatient($cin, $nomComplet, $dateNaissance, $sexe, $profession, $tel, $adresse, $numSecSociale,$payeurs,$mutuelle, $dAlertes){
+        Patient::db()->exec("UPDATE patient SET nomComplet='$nomComplet', dateNaissance='$dateNaissance', sexe='$sexe', profession='$profession', tel='$tel', adresse='$adresse', numSecSociale='$numSecSociale', mutuelle='$mutuelle', payeurs='$payeurs', dAlertes='$dAlertes' WHERE cin='$cin'");
     }
 
     static public function archivePatient($cin) {

@@ -70,9 +70,7 @@ if (isset($_POST['archive'])) {
                     <div class="info_table">
                         <div class="table_header">
                             <div class="add_btn">
-                                <form action="">
-                                    <button class="add_btn_pat">add patient</button>
-                                </form>
+                                    <a class="add_btn_pat" href="./addP.php" style="padding: .2rem;">Add patient</a>
                             </div>
                             <div class="search">
                                 <input type="input" placeholder="search">
@@ -91,7 +89,7 @@ if (isset($_POST['archive'])) {
                                 foreach($patients as $patient) {
                                     echo "<div class='table_body_content'>
                                     <div class='table_body_info'>
-                                        <div class='info_cin'><a href=''>".$patient['cin']."</a></div>
+                                        <div class='info_cin'><a href='./editP.php?cin=".$patient['cin']."'>".$patient['cin']."</a></div>
                                         <div class='info_fullname'>".$patient['nomComplet']."</div>
                                         <div class='info_sex'>".$patient['sexe']."</div>
                                         <div class='action_info'>
